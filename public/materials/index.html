@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f8f7f3" />
+    <meta name="description" content="领队创作者中心：热门灵感和线路素材，拿来就能发。" />
+    <title>创作者中心 · 游侠领队</title>
+    <link rel="stylesheet" href="./styles.css?v=9" />
+    <link rel="stylesheet" href="./route-list.css?v=9" />
+    <link rel="stylesheet" href="./generic-gallery.css?v=9" />
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <section id="homePage" class="page page-active">
+        <header class="topbar">
+          <button class="icon-btn" id="backToLeaderHome" aria-label="返回我的页面"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="topbar-title">创作者中心</div>
+          <button class="icon-btn" id="helpButton" aria-label="使用说明"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 114.4 1c-.7 1-2.2 1.2-2.2 2.8M12 16.5h.01"/></svg></button>
+        </header>
+
+        <section class="section hot-materials">
+          <div class="section-head">
+            <div><h2>当下热门</h2></div>
+            <button class="text-btn" id="selectToggle" hidden>批量选择</button>
+          </div>
+          <div class="generic-tabs" role="tablist" aria-label="热门素材分类">
+            <button class="generic-tab active" data-generic-tab="ready" role="tab">直接发布</button>
+            <button class="generic-tab" data-generic-tab="photos" role="tab">图片</button>
+            <button class="generic-tab" data-generic-tab="videos" role="tab">视频</button>
+          </div>
+          <div id="genericGrid" class="material-grid"></div>
+        </section>
+
+        <section class="section routes-section">
+          <div class="section-head route-head">
+            <div><div class="section-kicker">上周报名热榜</div><h2>热门线路</h2></div>
+            <button class="search-entry" id="openSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>搜线路</button>
+          </div>
+          <div class="route-tabs" role="tablist" aria-label="线路分类">
+            <button class="route-tab active" data-category="nearby" role="tab">周边游</button>
+            <button class="route-tab" data-category="domestic" role="tab">国内游</button>
+            <button class="route-tab" data-category="outbound" role="tab">出境游</button>
+          </div>
+          <div id="cityFilters" class="city-filters" aria-label="周边游出发城市"></div>
+          <div id="routeList" class="route-list"></div>
+        </section>
+        <footer class="home-footer"><span>素材由游侠客官方提供</span><span>·</span><span>每周持续更新</span></footer>
+      </section>
+
+      <section id="libraryPage" class="page" hidden>
+        <header class="library-cover">
+          <button class="icon-btn cover-back" data-back aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div id="libraryCoverImage" class="cover-image"></div><div class="cover-shade"></div>
+          <div class="cover-copy"><span id="libraryBadge" class="cover-badge">周边游 TOP 1</span><h1 id="libraryTitle">川西秘境 4 日</h1><p id="libraryMeta">上周 286 人报名 · 34 份素材</p></div>
+        </header>
+        <div class="library-body">
+          <div class="library-tabs" role="tablist">
+            <button class="library-tab active" data-library-tab="ready">直接发布 <span id="readyCount"></span></button>
+            <button class="library-tab" data-library-tab="photos">素材图片 <span id="photoCount"></span></button>
+            <button class="library-tab" data-library-tab="videos">素材视频 <span id="videoCount"></span></button>
+          </div>
+          <div id="libraryContent" class="library-content"></div>
+        </div>
+      </section>
+
+      <section id="searchPage" class="page" hidden>
+        <header class="search-header">
+          <button class="icon-btn" data-back aria-label="返回"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <label class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><input id="searchInput" type="search" placeholder="搜索线路名称或目的地" autocomplete="off" /></label>
+        </header>
+        <div class="search-body">
+          <div id="searchIntro"><p class="search-label">大家都在找</p><div class="chips"><button data-keyword="新疆">新疆</button><button data-keyword="徒步">徒步</button><button data-keyword="云南">云南</button><button data-keyword="日本">日本</button></div></div>
+          <div id="searchResults" class="route-list search-results"></div>
+        </div>
+      </section>
+
+      <div id="selectionBar" class="selection-bar" hidden><button id="cancelSelection">取消</button><div><strong id="selectedCount">0</strong><span>已选素材</span></div><button id="saveSelected" class="save-button" disabled>保存到相册</button></div>
+    </main>
+
+    <div id="scrim" class="scrim" hidden></div>
+    <section id="previewSheet" class="bottom-sheet preview-sheet" role="dialog" aria-modal="true" hidden>
+      <button class="sheet-close" data-close aria-label="关闭">×</button>
+      <div id="previewCounter" class="preview-counter" hidden></div>
+      <button id="previewPrev" class="preview-nav preview-prev" aria-label="上一个素材" hidden>‹</button>
+      <button id="previewNext" class="preview-nav preview-next" aria-label="下一个素材" hidden>›</button>
+      <div id="previewMedia" class="preview-media"></div>
+      <div class="preview-copy"><div id="previewLabel" class="preview-label">本周热门</div><h2 id="previewTitle">秋日露营氛围</h2><p id="previewMeta">图片 · 4.2 MB</p><button id="saveSingle" class="primary-btn">保存到相册</button></div>
+    </section>
+
+    <section id="packageSheet" class="bottom-sheet package-sheet" role="dialog" aria-modal="true" hidden>
+      <button class="sheet-close" data-close aria-label="关闭">×</button><div id="packageMedia" class="package-media"></div>
+      <div class="package-body"><div class="package-badges"><span>直接发布</span><span id="packageMediaMeta">6 张图片</span></div><h2 id="packageTitle">川西的秋天，真的不用滤镜</h2><label for="captionInput">推荐文案 <span>可修改</span></label><textarea id="captionInput" maxlength="50" rows="3"></textarea><div class="caption-count"><span id="captionCount">0</span>/50</div><button id="saveAndCopy" class="primary-btn">保存素材并复制文案</button></div>
+    </section>
+
+    <section id="platformSheet" class="bottom-sheet platform-sheet" role="dialog" aria-modal="true" hidden>
+      <div class="success-mark">✓</div><h2>素材已保存，文案已复制</h2><p>现在可以去社交平台发布了</p>
+      <div class="platform-actions"><button data-platform="抖音"><span class="douyin-icon">♪</span><strong>去抖音</strong></button><button data-platform="小红书"><span class="xhs-icon">小红书</span><strong>去小红书</strong></button></div><button class="later-btn" data-close>稍后再发</button>
+    </section>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js?v=9"></script>
+  </body>
+</html>

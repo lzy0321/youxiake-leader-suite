@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f9" />
+    <title>年度数据 - 游侠领队</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./annual-data.css" />
+  </head>
+  <body>
+    <main class="phone-shell detail-shell">
+      <header class="app-header detail-header">
+        <button id="backButton" class="icon-button" aria-label="返回">←</button>
+        <h1>年度数据</h1>
+      </header>
+
+      <section class="detail-content">
+        <div class="period-tabs" role="tablist" aria-label="统计周期">
+          <button class="period-tab" data-period="month" role="tab" aria-selected="false">月</button>
+          <button class="period-tab active" data-period="year" role="tab" aria-selected="true">年</button>
+          <button class="period-tab" data-period="total" role="tab" aria-selected="false">总计</button>
+        </div>
+
+        <section class="data-hero">
+          <div class="period-selector">
+            <button id="periodPrev" aria-label="上一个周期">‹</button>
+            <strong id="periodLabel">2026年</strong>
+            <button id="periodNext" aria-label="下一个周期">›</button>
+          </div>
+          <div class="detail-metrics">
+            <div><small>带团次数</small><strong id="tripCount">63<em>次</em></strong></div>
+            <div><small>带团人数</small><strong id="guestCount">812<em>人</em></strong></div>
+            <div><small>带团天数</small><strong id="dayCount">148<em>天</em></strong></div>
+          </div>
+          <p id="periodHint">统计本年度已结束团期</p>
+        </section>
+
+        <section class="detail-card people-card">
+          <div class="detail-title">
+            <div><strong>同行旅友</strong></div>
+            <span>前10名</span>
+          </div>
+          <div id="guestList" class="people-list"></div>
+        </section>
+
+        <section class="detail-card people-card">
+          <div class="detail-title">
+            <div><strong>并肩领队</strong></div>
+            <span>前5名</span>
+          </div>
+          <div id="leaderList" class="people-list leader-list"></div>
+        </section>
+
+        <section class="detail-card milestone-card">
+          <div class="detail-title">
+            <div><strong>领队带团里程碑</strong></div>
+            <span id="milestonePage">1/3</span>
+          </div>
+          <div class="milestone-stage">
+            <button id="milestonePrev" class="milestone-arrow" aria-label="上一位">‹</button>
+            <div class="milestone-person">
+              <span id="milestoneAvatar" class="person-avatar"></span>
+              <div><small>恭喜</small><strong id="milestoneName"></strong><p id="milestoneText"></p></div>
+            </div>
+            <button id="milestoneNext" class="milestone-arrow" aria-label="下一位">›</button>
+          </div>
+          <div id="milestoneDots" class="milestone-dots"></div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./annual-data.js"></script>
+  </body>
+</html>

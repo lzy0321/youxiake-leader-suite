@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f6f8" />
+    <title>个人资料 - 游侠领队</title>
+    <link rel="stylesheet" href="./personal-info.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <button id="backButton" aria-label="返回">←</button>
+        <h1>个人资料 - 游侠领队</h1>
+      </header>
+
+      <div class="page-content">
+        <section class="info-card" aria-labelledby="basicTitle">
+          <h2 id="basicTitle">基本信息</h2>
+          <div class="info-row avatar-row"><span>领队头像</span><div class="leader-avatar">易</div></div>
+          <button class="info-row"><span>生日</span><span class="row-value">1997-10-29 <b>›</b></span></button>
+          <button class="info-row"><span>手机号码</span><span class="row-value">15528021756 <b>›</b></span></button>
+          <button class="info-row"><span>微信</span><span class="row-value">15528021756 <b>›</b></span></button>
+          <button class="info-row"><span>职业</span><span class="row-value">互联网 <b>›</b></span></button>
+        </section>
+
+        <section class="info-card" aria-labelledby="teamTitle">
+          <h2 id="teamTitle">带队信息</h2>
+          <button class="info-row stacked"><span><i>*</i>详细地址</span><span class="row-value">浙江省杭州西湖区游侠客总部 <b>›</b></span></button>
+          <button class="info-row stacked"><span><i>*</i>个人技能</span><span class="skills"><em>游泳</em><em>骑行</em><em>英语</em><b>›</b></span></button>
+          <button class="info-row stacked"><span>个人说明</span><span class="row-value">说明就是没说明 <b>›</b></span></button>
+        </section>
+
+        <section class="info-card social-card" aria-labelledby="socialTitle">
+          <div class="section-heading">
+            <h2 id="socialTitle">社交账号</h2>
+            <span id="quotaBadge" class="quota-badge">本月剩余 2 次</span>
+          </div>
+          <div class="social-main">
+            <div class="xhs-logo">小红书</div>
+            <div class="social-copy">
+              <strong>小红书号</strong>
+              <span id="accountValue">未绑定</span>
+            </div>
+            <button id="bindButton" class="bind-button">立即绑定</button>
+          </div>
+          <div class="quota-note">
+            <span>绑定或修改每月最多 2 次</span>
+            <span id="resetDate">每月 1 日刷新</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="sheetMask" class="sheet-mask" hidden>
+      <section class="account-sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+        <div class="sheet-head">
+          <h2 id="sheetTitle">绑定小红书号</h2>
+          <button id="closeSheet" aria-label="关闭">×</button>
+        </div>
+        <p class="sheet-tip">填写你的小红书号，保存后将消耗 1 次修改机会</p>
+        <label for="accountInput">小红书号</label>
+        <input id="accountInput" maxlength="30" autocomplete="off" placeholder="请输入小红书号" />
+        <p id="inputError" class="input-error" aria-live="polite"></p>
+        <button id="saveAccount" class="save-button">确认保存</button>
+        <p id="sheetQuota" class="sheet-quota">本月剩余 2 次</p>
+      </section>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./personal-info.js"></script>
+  </body>
+</html>

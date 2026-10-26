@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f9" />
+    <title>拉新榜 - 游侠领队</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./content-ranking.css" />
+    <link rel="stylesheet" href="./acquisition-ranking.css" />
+  </head>
+  <body>
+    <main class="phone-shell ranking-shell acquisition-shell">
+      <header class="app-header ranking-header">
+        <button id="backButton" class="icon-button" aria-label="返回">←</button>
+        <button class="icon-button close-button" aria-label="关闭">×</button>
+        <h1>拉新榜 - 游侠领队</h1>
+      </header>
+
+      <section class="ranking-hero acquisition-hero">
+        <div class="ranking-brand">
+          <span>实时更新</span>
+          <strong>领队拉新榜</strong>
+          <small>让更多新朋友加入游侠客</small>
+        </div>
+
+        <div class="ranking-period" role="tablist" aria-label="排行时间">
+          <button class="time-tab active" data-time="year" role="tab" aria-selected="true">年度排行</button>
+          <button class="time-tab" data-time="month" role="tab" aria-selected="false">本月排行</button>
+          <button class="time-tab" data-time="lastMonth" role="tab" aria-selected="false">上月排行</button>
+        </div>
+
+        <div class="metric-tabs" role="tablist" aria-label="拉新榜指标">
+          <button class="metric-tab active" data-metric="newUsers" role="tab" aria-selected="true">拉新人数</button>
+          <button class="metric-tab" data-metric="conversion" role="tab" aria-selected="false">拉新转化率</button>
+        </div>
+
+        <p id="rankingNote" class="ranking-note">按成功注册的新用户人数排名</p>
+        <div id="podium" class="podium"></div>
+      </section>
+
+      <section class="ranking-list-wrap">
+        <div class="list-heading"><span>排名</span><span>领队</span><span id="metricLabel">拉新人数</span></div>
+        <div id="rankingList" class="ranking-list"></div>
+      </section>
+
+      <aside class="my-ranking">
+        <strong id="myRank">215</strong>
+        <span class="rank-avatar">易</span>
+        <span><b>易涟</b><small>杭州站 · 我的</small></span>
+        <em id="myScore">7人</em>
+      </aside>
+    </main>
+    <script src="./acquisition-ranking.js"></script>
+  </body>
+</html>

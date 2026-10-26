@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f6f9" />
+    <title>首页 - 游侠领队</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="prototype-tools" aria-label="原型演示状态">
+      <strong>折叠规则演示</strong>
+      <div>
+        <button class="demo-button active" data-trip="off">无行程</button>
+        <button class="demo-button" data-trip="on">行程中</button>
+      </div>
+      <small>切换后模拟当天首次进入</small>
+    </aside>
+
+    <main class="phone-shell">
+      <header class="app-header">
+        <button class="icon-button" aria-label="返回">←</button>
+        <button class="icon-button close-button" aria-label="关闭">×</button>
+        <h1>首页 - 游侠领队</h1>
+      </header>
+
+      <section class="hero-zone">
+        <article class="profile-card">
+          <div class="identity">
+            <div class="avatar main-avatar">易</div>
+            <div class="identity-copy">
+              <div class="name-line"><strong>易涟</strong><span class="verified">✓</span><span class="leader-tag">✦ 铂金领队</span></div>
+              <div class="points-row" aria-label="积分1126.6，距离升级还差873.4积分">
+                <span>积分 <b>1126.6</b></span>
+                <i><em></em></i>
+                <small>距升级 873.4</small>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <button class="operation-banner" data-toast="打开第五批领队达人专题">
+          <span class="banner-mascot">◆</span>
+          <span><strong>第五批领队达人出道啦</strong><small>快来看看有没有你熟悉的领队 ›</small></span>
+        </button>
+      </section>
+
+      <section class="page-content">
+        <article id="overviewCard" class="overview-card">
+          <button id="overviewToggle" class="overview-heading" aria-expanded="true">
+            <span>
+              <strong>领队数据</strong>
+            </span>
+            <span class="overview-action">收起 <i>⌃</i></span>
+          </button>
+
+          <button id="collapsedSummary" class="collapsed-summary" hidden>
+            <span><b>63</b>次带团</span>
+            <span><b>812</b>人</span>
+            <span><b>¥8,600</b></span>
+            <i>⌄</i>
+          </button>
+
+          <div id="overviewBody" class="overview-body">
+            <div class="overview-tabs" role="tablist" aria-label="领队数据类型">
+              <button class="overview-tab active" data-panel="data" role="tab" aria-selected="true">年度数据</button>
+              <button class="overview-tab" data-panel="ranking" role="tab" aria-selected="false">年度榜单</button>
+              <button class="overview-tab" data-panel="income" role="tab" aria-selected="false">年度收益</button>
+            </div>
+
+            <section class="overview-panel active" data-panel-content="data">
+              <div class="annual-data-grid compact-data-grid">
+                <span><small>带团次数</small><strong>63<em>次</em></strong></span>
+                <span><small>带团人数</small><strong>812<em>人</em></strong></span>
+                <span><small>带团天数</small><strong>148<em>天</em></strong></span>
+              </div>
+              <button class="panel-detail-link" data-href="./annual-data.html">查看年度数据详情 <i>›</i></button>
+            </section>
+
+            <section class="overview-panel" data-panel-content="ranking" hidden>
+              <div class="compact-ranking-row">
+                <button data-toast="进入年度积分榜"><span class="rank-icon purple">✦</span><span><small>积分榜</small><strong>第648名</strong></span><i>›</i></button>
+                <button data-href="./acquisition-ranking.html"><span class="rank-icon green">↗</span><span><small>拉新榜</small><strong>第215名</strong></span><i>›</i></button>
+                <button data-href="./content-ranking.html"><span class="rank-icon orange">▤</span><span><small>内容榜</small><strong>第96名</strong></span><i>›</i></button>
+              </div>
+            </section>
+
+            <section class="overview-panel income-panel" data-panel-content="income" hidden>
+              <div class="compact-income-row">
+                <span><small>年度总收益</small><b id="incomeTotal" data-value="¥8,600.00">******</b></span>
+                <button id="incomeVisibilityToggle" aria-label="显示收益" aria-pressed="false">👁</button>
+              </div>
+              <button class="panel-detail-link" data-toast="进入年度收益详情">查看收益详情 <i>›</i></button>
+            </section>
+          </div>
+        </article>
+
+        <section class="trip-tools">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="tripSearch" placeholder="请输入线路名称" />
+            <button id="searchButton">搜索</button>
+          </div>
+          <div class="filters">
+            <button>遇见/游记状态⌄</button>
+            <button>领队费状态⌄</button>
+            <button>报账状态⌄</button>
+          </div>
+        </section>
+
+        <section class="trip-list" aria-label="团单列表">
+          <article class="trip-card">
+            <div class="trip-top"><span class="member-label">会员</span><strong>西班牙朝圣之路9日｜唯二世遗之路</strong></div>
+            <p>13人（13成人 0儿童）</p>
+            <div class="date-row">
+              <div><strong>09月25日</strong><small>2026/周五</small></div>
+              <span>待回访</span>
+              <div><strong>10月03日</strong><small>2026/周六</small></div>
+            </div>
+            <div class="task-grid">
+              <button data-toast="进入领队回访">领队回访<small>待提交</small></button>
+              <button data-href="./submit-content.html">游记/遇见<small>待提交</small></button>
+              <button data-toast="查看领队报账">领队报账<small>计调审核中</small></button>
+            </div>
+            <div class="rates"><span>出团率 <b>100%</b></span><span>评价率 <b>84.62%</b></span><span>好评率 <b>100%</b></span></div>
+          </article>
+
+          <article class="trip-card compact-trip">
+            <div class="trip-top"><span class="member-label">会员</span><strong>富春天子岗｜游古村-轻徒步-吃葡萄1年</strong></div>
+            <p>46人（39成人 7儿童）</p>
+            <div class="date-row">
+              <div><strong>10月18日</strong><small>2026/周日</small></div>
+              <span class="ready">待出团</span>
+              <div><strong>10月18日</strong><small>2026/周日</small></div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <nav class="bottom-nav">
+        <button class="active"><span>⌂</span>首页</button>
+        <button data-toast="进入带团"><span>⚑</span>带团</button>
+        <button data-toast="进入学院"><span>▣</span>学院</button>
+        <button data-toast="进入内购"><span>▢</span>内购</button>
+        <button data-href="./my.html"><span>♙</span>我的</button>
+      </nav>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
