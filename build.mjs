@@ -3,8 +3,9 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = dirname(fileURLToPath(import.meta.url));
-const output = resolve(root, "dist");
-rmSync(output, { recursive: true, force: true });
+const dist = resolve(root, "dist");
+const output = resolve(dist, "output");
+rmSync(dist, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });
 cpSync(resolve(root, "index.html"), resolve(output, "index.html"));
 if (existsSync(resolve(root, "public"))) {
