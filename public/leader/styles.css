@@ -82,13 +82,13 @@ button { -webkit-tap-highlight-color: transparent; }
 .compact-data-grid { padding:2px 0 14px; }
 .panel-detail-link { display:flex; align-items:center; justify-content:center; width:calc(100% + 28px); height:40px; margin:0 -14px; border:0; border-top:1px solid #edf0f4; border-radius:0 0 13px 13px; color:#62738e; background:#fafbfd; font-size:11px; cursor:pointer; }
 .panel-detail-link i { margin-left:5px; font-size:15px; font-style:normal; }
-.compact-ranking-row { display:grid; gap:1px; margin:-14px; overflow:hidden; border-radius:13px; background:#edf0f4; }
-.compact-ranking-row > button { display:grid; grid-template-columns:34px 1fr 16px; align-items:center; min-height:58px; padding:7px 12px; border:0; background:#fff; text-align:left; cursor:pointer; }
+.compact-ranking-row { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:0 0 14px; }
+.compact-ranking-row > button { position:relative; display:flex; flex-direction:column; align-items:flex-start; min-width:0; min-height:88px; padding:10px 9px; border:0; border-radius:11px; background:#f7f9fc; text-align:left; cursor:pointer; }
 .compact-ranking-row .rank-icon { width:28px; height:28px; margin:0; }
-.compact-ranking-row button > span:nth-child(2) { display:flex; align-items:baseline; justify-content:space-between; padding-right:8px; }
+.compact-ranking-row button > span:nth-child(2) { display:flex; flex-direction:column; align-items:flex-start; padding:0; }
 .compact-ranking-row small { color:#7f8794; font-size:11px; }
-.compact-ranking-row strong { color:#263248; font-size:14px; }
-.compact-ranking-row i { color:#a6adb8; font-size:17px; font-style:normal; }
+.compact-ranking-row strong { margin-top:3px; color:#263248; font-size:14px; white-space:nowrap; }
+.compact-ranking-row i { position:absolute; right:8px; bottom:9px; color:#a6adb8; font-size:17px; font-style:normal; }
 .income-panel { padding-top:0; background:linear-gradient(135deg,#f4f8ff,#fff); }
 .compact-income-row { display:flex; align-items:center; justify-content:space-between; min-height:72px; }
 .compact-income-row > span { display:flex; flex-direction:column; }

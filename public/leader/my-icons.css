@@ -4,3 +4,16 @@
   height: 32px;
   object-fit: contain;
 }
+
+.my-bottom-nav i img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  opacity: 0.58;
+}
+
+.my-bottom-nav .active i img {
+  opacity: 1;
+  filter: invert(35%) sepia(97%) saturate(3606%) hue-rotate(210deg) brightness(99%) contrast(107%);
+}

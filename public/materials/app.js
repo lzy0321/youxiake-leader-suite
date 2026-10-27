@@ -38,7 +38,7 @@ const routeSeed = {
   ]
 };
 
-const nearbyCities=["杭州","上海","北京","广州"];
+const nearbyCities=["杭州","上海","北京","广州","深圳","郑州","西安","苏州","南京","无锡","宁波"];
 const nearbyCitySeed={
   杭州:routeSeed.nearby,
   上海:[
@@ -49,6 +49,27 @@ const nearbyCitySeed={
   ],
   广州:[
     ["从化溪头村徒步 1 日","从化 · 徒步",289,34,IMG.forest],["惠州双月湾度假 2 日","惠州 · 海滨",263,31,IMG.sea],["清远古龙峡漂流 1 日","清远 · 户外",238,29,IMG.lake],["肇庆鼎湖山轻徒步 1 日","肇庆 · 山野",214,27,IMG.mountain],["珠海外伶仃岛 2 日","珠海 · 海岛",195,30,IMG.sea],["韶关丹霞山 2 日","韶关 · 摄影",176,24,IMG.autumn],["佛山岭南古村 1 日","佛山 · 人文",158,22,IMG.village],["江门开平碉楼 2 日","江门 · 人文",141,20,IMG.city],["汕尾红海湾 2 日","汕尾 · 海滨",126,18,IMG.sea],["东莞银瓶山徒步 1 日","东莞 · 徒步",109,16,IMG.mountain]
+  ],
+  深圳:[
+    ["东西涌海岸线徒步 1 日","深圳 · 海岸",278,33,IMG.sea],["大鹏半岛海滨度假 2 日","大鹏 · 海滨",254,30,IMG.sea],["惠州罗浮山轻徒步 1 日","惠州 · 山野",231,28,IMG.mountain],["珠海桂山岛漫游 2 日","珠海 · 海岛",209,26,IMG.sea],["清远英西峰林 2 日","清远 · 徒步",188,24,IMG.forest],["东莞银瓶山穿越 1 日","东莞 · 徒步",171,23,IMG.mountain],["顺德美食寻味 1 日","佛山 · 美食",154,21,IMG.city],["汕尾红海湾露营 2 日","汕尾 · 露营",139,20,IMG.camp],["中山古镇漫游 1 日","中山 · 人文",122,18,IMG.village],["南昆山森林氧吧 2 日","惠州 · 度假",106,16,IMG.forest]
+  ],
+  郑州:[
+    ["嵩山少林徒步 1 日","登封 · 徒步",265,31,IMG.mountain],["云台山峡谷之旅 2 日","焦作 · 山水",243,29,IMG.lake],["洛阳老君山 2 日","洛阳 · 山野",221,27,IMG.mountain],["开封古城寻味 1 日","开封 · 人文",199,25,IMG.village],["宝泉秘境戏水 1 日","新乡 · 山水",181,23,IMG.lake],["万仙山郭亮村 2 日","新乡 · 古村",164,22,IMG.village],["伏羲山峡谷徒步 1 日","新密 · 徒步",148,20,IMG.forest],["洛阳白云山 2 日","洛阳 · 避暑",132,19,IMG.mountain],["黄河三峡游船 1 日","济源 · 山水",117,17,IMG.lake],["尧山赏秋之旅 2 日","平顶山 · 摄影",102,16,IMG.autumn]
+  ],
+  西安:[
+    ["华山经典徒步 2 日","渭南 · 徒步",292,34,IMG.mountain],["太白山高山穿越 2 日","宝鸡 · 山野",268,31,IMG.snow],["壶口瀑布壮游 2 日","延安 · 风光",245,29,IMG.lake],["秦岭终南山 1 日","西安 · 徒步",222,27,IMG.forest],["兵马俑历史之旅 1 日","临潼 · 人文",201,26,IMG.city],["翠华山赏秋 1 日","长安 · 摄影",183,24,IMG.autumn],["法门寺文化之旅 1 日","宝鸡 · 人文",166,22,IMG.village],["袁家村关中寻味 1 日","咸阳 · 美食",149,20,IMG.village],["汉中油菜花海 2 日","汉中 · 摄影",133,19,IMG.autumn],["延安红色之旅 2 日","延安 · 人文",118,17,IMG.road]
+  ],
+  苏州:[
+    ["太湖西山环岛 1 日","苏州 · 骑行",274,32,IMG.lake],["同里古镇慢游 1 日","吴江 · 古镇",251,29,IMG.village],["周庄水乡漫游 1 日","昆山 · 古镇",229,27,IMG.village],["天平山红枫之旅 1 日","苏州 · 摄影",207,25,IMG.autumn],["穹窿山森林徒步 1 日","苏州 · 徒步",189,24,IMG.forest],["宜兴竹海轻徒步 1 日","无锡 · 山野",172,22,IMG.forest],["南浔古镇寻味 1 日","湖州 · 人文",155,21,IMG.village],["常熟虞山徒步 1 日","常熟 · 徒步",138,19,IMG.mountain],["太湖露营看日落 2 日","苏州 · 露营",123,18,IMG.camp],["千灯古镇漫游 1 日","昆山 · 古镇",107,16,IMG.village]
+  ],
+  南京:[
+    ["牛首山文化之旅 1 日","南京 · 人文",281,33,IMG.city],["高淳国际慢城 1 日","高淳 · 田园",257,30,IMG.autumn],["扬州古城寻味 1 日","扬州 · 人文",234,28,IMG.village],["镇江西津渡 1 日","镇江 · 古镇",212,26,IMG.village],["茅山轻徒步 1 日","句容 · 徒步",193,24,IMG.mountain],["皖南川藏线 2 日","宣城 · 自驾",176,23,IMG.road],["溧阳南山竹海 1 日","常州 · 山野",159,21,IMG.forest],["无锡拈花湾夜游 1 日","无锡 · 休闲",142,20,IMG.city],["池杉湖湿地摄影 1 日","南京 · 摄影",126,18,IMG.lake],["黄山赏秋 2 日","黄山 · 摄影",111,17,IMG.mountain]
+  ],
+  无锡:[
+    ["鼋头渚太湖风光 1 日","无锡 · 摄影",270,32,IMG.lake],["宜兴竹海轻徒步 1 日","宜兴 · 山野",248,29,IMG.forest],["拈花湾禅意夜游 1 日","无锡 · 休闲",226,27,IMG.city],["惠山古镇寻味 1 日","无锡 · 古镇",204,25,IMG.village],["苏州园林漫游 1 日","苏州 · 人文",186,24,IMG.village],["天目湖山水之旅 1 日","常州 · 山水",169,22,IMG.lake],["溧阳南山竹海 1 日","溧阳 · 徒步",152,21,IMG.forest],["南浔古镇慢游 1 日","湖州 · 古镇",136,19,IMG.village],["太湖露营看日落 2 日","无锡 · 露营",121,18,IMG.camp],["江阴滨江骑行 1 日","江阴 · 骑行",105,16,IMG.road]
+  ],
+  宁波:[
+    ["四明山红枫之旅 1 日","宁波 · 摄影",283,33,IMG.autumn],["舟山普陀山 2 日","舟山 · 人文",260,30,IMG.sea],["象山石浦渔港 2 日","象山 · 海滨",237,28,IMG.sea],["东钱湖环湖骑行 1 日","宁波 · 骑行",215,26,IMG.lake],["奉化雪窦山 1 日","奉化 · 山野",196,25,IMG.mountain],["宁海古道徒步 1 日","宁海 · 徒步",178,23,IMG.forest],["绍兴古城漫游 1 日","绍兴 · 人文",161,21,IMG.village],["台州神仙居 2 日","台州 · 山野",144,20,IMG.mountain],["仙居公盂徒步 2 日","仙居 · 徒步",128,18,IMG.forest],["东极岛海风之旅 2 日","舟山 · 海岛",112,17,IMG.sea]
   ]
 };
 
@@ -82,7 +103,7 @@ function renderGeneric(){
 }
 
 function routeMarkup(route,index=route.rank){return `<button class="route-card ${route.assets===0?"no-assets":""}" data-route="${route.id}"><span class="rank">${String(index).padStart(2,"0")}</span><span class="route-thumb" ${bg(route.image)}></span><span class="route-info"><h3>${route.name}</h3><p>${route.meta}</p><span class="route-stats"><span class="signup">上周 ${route.signups} 人报名</span><span class="asset-count">${route.assets} 份素材</span></span></span><span class="route-chevron">›</span></button>`}
-function renderCityFilters(){const filters=$("#cityFilters");filters.hidden=activeCategory!=="nearby";filters.innerHTML=nearbyCities.map(city=>`<button class="city-filter ${city===activeNearbyCity?"active":""}" data-city="${city}" aria-pressed="${city===activeNearbyCity}">${city}</button>`).join("")}
+function renderCityFilters(){const filters=$("#cityFilters");filters.hidden=activeCategory!=="nearby";const select=$("#citySelect");if(!select.options.length)select.innerHTML=nearbyCities.map(city=>`<option value="${city}">${city}站</option>`).join("");select.value=activeNearbyCity}
 function renderRoutes(){renderCityFilters();const list=routes.filter(r=>r.category===activeCategory&&(activeCategory!=="nearby"||r.city===activeNearbyCity)).slice(0,10);$("#routeList").innerHTML=list.map(r=>routeMarkup(r)).join("")}
 
 function setPage(id){$$('.page').forEach(p=>{p.hidden=p.id!==id;p.classList.toggle("page-active",p.id===id)});window.scrollTo({top:0,behavior:"instant"})}
@@ -184,7 +205,7 @@ $("#previewMedia").addEventListener("touchend",e=>{const distance=e.changedTouch
 document.addEventListener("keydown",e=>{if($("#previewSheet").hidden||previewItems.length<2)return;if(e.key==="ArrowLeft")movePreview(-1);if(e.key==="ArrowRight")movePreview(1)});
 
 $$('.route-tab').forEach(tab=>tab.addEventListener("click",()=>{activeCategory=tab.dataset.category;$$('.route-tab').forEach(t=>t.classList.toggle("active",t===tab));renderRoutes()}));
-$("#cityFilters").addEventListener("click",e=>{const button=e.target.closest("[data-city]");if(!button)return;activeNearbyCity=button.dataset.city;renderRoutes()});
+$("#citySelect").addEventListener("change",e=>{activeNearbyCity=e.target.value;renderRoutes()});
 function routeClick(e){const card=e.target.closest("[data-route]");if(card)openLibrary(routes.find(r=>r.id===card.dataset.route))}
 $("#routeList").addEventListener("click",routeClick);$("#searchResults").addEventListener("click",routeClick);
 $("#openSearch").addEventListener("click",()=>{setPage("searchPage");setTimeout(()=>$("#searchInput").focus(),100)});

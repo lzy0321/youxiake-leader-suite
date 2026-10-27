@@ -66,15 +66,6 @@ overviewToggle.addEventListener("click", () => {
 });
 collapsedSummary.addEventListener("click", () => applyOverview(true));
 
-document.querySelector("#incomeVisibilityToggle").addEventListener("click", event => {
-  event.stopPropagation();
-  const button = event.currentTarget;
-  const visible = button.getAttribute("aria-pressed") !== "true";
-  button.setAttribute("aria-pressed", String(visible));
-  button.setAttribute("aria-label", visible ? "隐藏收益" : "显示收益");
-  document.querySelector("#incomeTotal").textContent = visible ? document.querySelector("#incomeTotal").dataset.value : "******";
-});
-
 document.querySelectorAll(".overview-tab").forEach(button => {
   button.addEventListener("click", () => {
     activeOverviewPanel = button.dataset.panel;

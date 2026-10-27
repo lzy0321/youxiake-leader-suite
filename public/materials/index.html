@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#f8f7f3" />
     <meta name="description" content="领队创作者中心：热门灵感和线路素材，拿来就能发。" />
     <title>创作者中心 · 游侠领队</title>
-    <link rel="stylesheet" href="./styles.css?v=9" />
-    <link rel="stylesheet" href="./route-list.css?v=9" />
-    <link rel="stylesheet" href="./generic-gallery.css?v=9" />
+    <link rel="stylesheet" href="./styles.css?v=11" />
+    <link rel="stylesheet" href="./route-list.css?v=11" />
+    <link rel="stylesheet" href="./generic-gallery.css?v=11" />
   </head>
   <body>
     <main class="app-shell" id="app">
@@ -42,7 +42,12 @@
             <button class="route-tab" data-category="domestic" role="tab">国内游</button>
             <button class="route-tab" data-category="outbound" role="tab">出境游</button>
           </div>
-          <div id="cityFilters" class="city-filters" aria-label="周边游出发城市"></div>
+          <div id="cityFilters" class="city-filter-row">
+            <span class="city-filter-label">出发城市</span>
+            <label class="city-select-wrap">
+              <select id="citySelect" aria-label="选择周边游出发城市"></select>
+            </label>
+          </div>
           <div id="routeList" class="route-list"></div>
         </section>
         <footer class="home-footer"><span>素材由游侠客官方提供</span><span>·</span><span>每周持续更新</span></footer>
@@ -98,6 +103,6 @@
       <div class="platform-actions"><button data-platform="抖音"><span class="douyin-icon">♪</span><strong>去抖音</strong></button><button data-platform="小红书"><span class="xhs-icon">小红书</span><strong>去小红书</strong></button></div><button class="later-btn" data-close>稍后再发</button>
     </section>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="./app.js?v=9"></script>
+    <script src="./app.js?v=11"></script>
   </body>
 </html>

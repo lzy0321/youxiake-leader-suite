@@ -57,7 +57,7 @@
           <button id="collapsedSummary" class="collapsed-summary" hidden>
             <span><b>63</b>次带团</span>
             <span><b>812</b>人</span>
-            <span><b>¥8,600</b></span>
+            <span><b>148</b>天</span>
             <i>⌄</i>
           </button>
 
@@ -65,7 +65,7 @@
             <div class="overview-tabs" role="tablist" aria-label="领队数据类型">
               <button class="overview-tab active" data-panel="data" role="tab" aria-selected="true">年度数据</button>
               <button class="overview-tab" data-panel="ranking" role="tab" aria-selected="false">年度榜单</button>
-              <button class="overview-tab" data-panel="income" role="tab" aria-selected="false">年度收益</button>
+              <button class="overview-tab" data-panel="acquisition" role="tab" aria-selected="false">年度拉新</button>
             </div>
 
             <section class="overview-panel active" data-panel-content="data">
@@ -85,12 +85,13 @@
               </div>
             </section>
 
-            <section class="overview-panel income-panel" data-panel-content="income" hidden>
-              <div class="compact-income-row">
-                <span><small>年度总收益</small><b id="incomeTotal" data-value="¥8,600.00">******</b></span>
-                <button id="incomeVisibilityToggle" aria-label="显示收益" aria-pressed="false">👁</button>
+            <section class="overview-panel" data-panel-content="acquisition" hidden>
+              <div class="annual-data-grid compact-data-grid">
+                <span><small>新人注册</small><strong>32<em>人</em></strong></span>
+                <span><small>APP新装</small><strong>34<em>人</em></strong></span>
+                <span><small>转化率</small><strong>3.56<em>%</em></strong></span>
               </div>
-              <button class="panel-detail-link" data-toast="进入年度收益详情">查看收益详情 <i>›</i></button>
+              <button class="panel-detail-link" data-toast="进入年度拉新详情">查看年度拉新详情 <i>›</i></button>
             </section>
           </div>
         </article>
