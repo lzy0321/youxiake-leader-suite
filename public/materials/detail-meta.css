@@ -1,0 +1,28 @@
+.preview-meta {
+  display: grid;
+  gap: 9px;
+  margin: 13px 0 18px;
+  padding: 13px 14px;
+  border-radius: 11px;
+  background: #f6f7f3;
+}
+
+.preview-meta div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.preview-meta dt {
+  color: #92958f;
+  font-size: 12px;
+}
+
+.preview-meta dd {
+  margin: 0;
+  color: #343832;
+  font-size: 12px;
+  font-weight: 650;
+  text-align: right;
+}

@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#f8f7f3" />
-    <meta name="description" content="领队创作者中心：热门灵感和线路素材，拿来就能发。" />
-    <title>创作者中心 · 游侠领队</title>
+    <meta name="description" content="领队素材库：热门灵感和线路素材，拿来就能发。" />
+    <title>领队素材库 · 游侠领队</title>
     <link rel="stylesheet" href="./styles.css?v=11" />
     <link rel="stylesheet" href="./route-list.css?v=11" />
     <link rel="stylesheet" href="./generic-gallery.css?v=11" />
+    <link rel="stylesheet" href="./detail-meta.css" />
   </head>
   <body>
     <main class="app-shell" id="app">
       <section id="homePage" class="page page-active">
         <header class="topbar">
           <button class="icon-btn" id="backToLeaderHome" aria-label="返回我的页面"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <div class="topbar-title">创作者中心</div>
+          <div class="topbar-title">领队素材库</div>
           <button class="icon-btn" id="helpButton" aria-label="使用说明"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 114.4 1c-.7 1-2.2 1.2-2.2 2.8M12 16.5h.01"/></svg></button>
         </header>
 
@@ -90,7 +91,7 @@
       <button id="previewPrev" class="preview-nav preview-prev" aria-label="上一个素材" hidden>‹</button>
       <button id="previewNext" class="preview-nav preview-next" aria-label="下一个素材" hidden>›</button>
       <div id="previewMedia" class="preview-media"></div>
-      <div class="preview-copy"><div id="previewLabel" class="preview-label">本周热门</div><h2 id="previewTitle">秋日露营氛围</h2><p id="previewMeta">图片 · 4.2 MB</p><button id="saveSingle" class="primary-btn">保存到相册</button></div>
+      <div class="preview-copy"><div id="previewLabel" class="preview-label">本周热门</div><h2 id="previewTitle">秋日露营氛围</h2><dl id="previewMeta" class="preview-meta"><div><dt>图片大小</dt><dd>4.2MB</dd></div><div><dt>上传人</dt><dd>九七/李阳</dd></div><div><dt>拍摄日期</dt><dd>2026-10-11</dd></div></dl><button id="saveSingle" class="primary-btn">保存到相册</button></div>
     </section>
 
     <section id="packageSheet" class="bottom-sheet package-sheet" role="dialog" aria-modal="true" hidden>

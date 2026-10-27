@@ -116,7 +116,9 @@ function renderPreviewSlide(){
   $("#previewMedia").style.backgroundImage=`url('${previewItem.image}')`;
   $("#previewLabel").textContent=previewItem.label||"原始素材";
   $("#previewTitle").textContent=previewItem.title||"线路素材";
-  $("#previewMeta").textContent=previewItem.type==="视频"?"视频":"高清图片 · 4.2 MB";
+  $("#previewMeta").innerHTML=previewItem.type==="视频"
+    ? '<div><dt>素材类型</dt><dd>视频</dd></div><div><dt>上传人</dt><dd>九七/李阳</dd></div><div><dt>拍摄日期</dt><dd>2026-10-11</dd></div>'
+    : '<div><dt>图片大小</dt><dd>4.2MB</dd></div><div><dt>上传人</dt><dd>九七/李阳</dd></div><div><dt>拍摄日期</dt><dd>2026-10-11</dd></div>';
   $("#previewCounter").textContent=`${previewIndex+1} / ${previewItems.length}`;
 }
 
