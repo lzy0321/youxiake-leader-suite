@@ -1,0 +1,28 @@
+#routePhotoGrid .photo-thumb::after {
+  display: none;
+}
+
+#routePhotoGrid .photo-info.compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 9px;
+}
+
+#routePhotoGrid .photo-info.compact strong,
+#routePhotoGrid .photo-info.compact span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#routePhotoGrid .photo-info.compact strong {
+  flex: 0 1 auto;
+}
+
+#routePhotoGrid .photo-info.compact span {
+  flex: 0 1 auto;
+  text-align: right;
+}

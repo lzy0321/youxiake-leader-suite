@@ -14,21 +14,35 @@ const IMG = {
 };
 
 const genericMaterials = [
-  {id:"g1",title:"秋日徒步大片",type:"图片",image:IMG.autumn,label:"本周热门"},
-  {id:"g2",title:"把周末交给山野",type:"视频",duration:"00:18",image:IMG.mountain,label:"今日上新"},
-  {id:"g3",title:"露营松弛感",type:"图片",image:IMG.camp,label:"领队在用"},
-  {id:"g4",title:"湖边治愈时刻",type:"视频",duration:"00:12",image:IMG.lake,label:"本周热门"},
+  {id:"g1",title:"秋日徒步大片",type:"图片",image:IMG.autumn,label:"本周热门",downloads:36},
+  {id:"g2",title:"把周末交给山野",type:"视频",duration:"00:18",image:IMG.mountain,label:"今日上新",downloads:24},
+  {id:"g3",title:"露营松弛感",type:"图片",image:IMG.camp,label:"领队在用",downloads:18},
+  {id:"g4",title:"湖边治愈时刻",type:"视频",duration:"00:12",image:IMG.lake,label:"本周热门",downloads:12},
   {id:"g5",title:"初雪氛围图",type:"图片",image:IMG.snow,label:"今日上新"},
   {id:"g6",title:"海边等一场日落",type:"图片",image:IMG.sea,label:"本周热门"},
   {id:"g7",title:"公路旅行随手拍",type:"视频",duration:"00:21",image:IMG.road,label:"领队在用"},
   {id:"g8",title:"森林里的光",type:"图片",image:IMG.forest,label:"本周热门"},
   {id:"g9",title:"城市漫游一日",type:"视频",duration:"00:15",image:IMG.city,label:"今日上新"},
-  {id:"g10",title:"冬日温泉氛围",type:"图片",image:IMG.japan,label:"领队在用"}
+  {id:"g10",title:"湖畔治愈时刻",type:"图片",image:IMG.lake,label:"领队在用"},
+  {id:"g11",title:"在路上的自由",type:"图片",image:IMG.road,label:"本周热门"},
+  {id:"g12",title:"山谷里的风",type:"图片",image:IMG.mountain,label:"本周热门"},
+  {id:"g13",title:"城市夜色漫游",type:"图片",image:IMG.city,label:"领队在用"},
+  {id:"g14",title:"古村慢游",type:"图片",image:IMG.village},
+  {id:"g15",title:"沙漠里的日落",type:"图片",image:IMG.desert},
+  {id:"g16",title:"街巷掠影",type:"图片",image:IMG.japan},
+  {id:"g17",title:"营地的一天",type:"视频",image:IMG.camp},
+  {id:"g18",title:"走进森林",type:"视频",image:IMG.forest},
+  {id:"g19",title:"雪山之下",type:"视频",image:IMG.snow},
+  {id:"g20",title:"去海边吹风",type:"视频",image:IMG.sea},
+  {id:"g21",title:"沙丘漫步",type:"视频",image:IMG.desert},
+  {id:"g22",title:"古村散步",type:"视频",image:IMG.village},
+  {id:"g23",title:"秋日山路",type:"视频",image:IMG.autumn},
+  {id:"g24",title:"街头随拍",type:"视频",image:IMG.japan}
 ];
 
 const routeSeed = {
   nearby:[
-    ["莫干山秋日徒步 1 日","杭州 · 徒步",286,34,IMG.forest],["徽杭古道轻徒步 2 日","临安 · 古道",241,28,IMG.mountain],["安吉云上草原 1 日","湖州 · 亲子",219,31,IMG.autumn],["四明山红枫之旅 1 日","宁波 · 摄影",198,22,IMG.road],["千岛湖骑行 2 日","淳安 · 骑行",176,25,IMG.lake],["括苍山云海露营 2 日","台州 · 露营",154,19,IMG.camp],["神仙居轻徒步 1 日","台州 · 山野",141,27,IMG.mountain],["舟山海岛漫游 2 日","舟山 · 海岛",128,23,IMG.sea],["皖南古村赏秋 2 日","安徽 · 古村",116,18,IMG.village],["大明山初雪之约 1 日","临安 · 赏雪",98,0,IMG.snow]
+    ["莫干山秋日徒步 1 日","杭州 · 徒步",286,34,IMG.forest],["徽杭古道轻徒步 2 日","临安 · 古道",241,28,IMG.mountain],["安吉云上草原 1 日","湖州 · 亲子",219,31,IMG.autumn],["四明山红枫之旅 1 日","宁波 · 摄影",198,22,IMG.road],["千岛湖骑行 2 日","淳安 · 骑行",176,25,IMG.lake],["括苍山云海露营 2 日","台州 · 露营",154,19,IMG.camp],["神仙居轻徒步 1 日","台州 · 山野",141,27,IMG.mountain],["舟山海岛漫游 2 日","舟山 · 海岛",128,23,IMG.sea],["皖南古村赏秋 2 日","安徽 · 古村",116,18,IMG.village],["大明山初雪之约 1 日","临安 · 赏雪",310,0,IMG.snow]
   ],
   domestic:[
     ["川西秘境环线 4 日","四川 · 雪山",386,42,IMG.mountain],["北疆喀纳斯秋色 8 日","新疆 · 摄影",351,38,IMG.lake],["云南雨崩徒步 6 日","云南 · 徒步",312,35,IMG.village],["海南万宁冲浪 5 日","海南 · 海岛",274,29,IMG.sea],["甘南小环线 7 日","甘肃 · 人文",249,33,IMG.road],["呼伦贝尔草原 6 日","内蒙古 · 亲子",228,26,IMG.autumn],["西北大环线 8 日","青甘 · 公路",207,31,IMG.desert],["贵州黔东南 6 日","贵州 · 人文",184,21,IMG.village],["长白山赏雪 5 日","吉林 · 冰雪",166,24,IMG.snow],["武功山穿越 3 日","江西 · 徒步",153,30,IMG.mountain]
@@ -78,48 +92,66 @@ const routes=[
   ...Object.entries(nearbyCitySeed).flatMap(([city,items])=>items.map((r,index)=>({id:`nearby-${city}-${index}`,category:"nearby",city,rank:index+1,name:r[0],meta:r[1],signups:r[2],assets:r[3],image:r[4]}))),
   ...["domestic","outbound"].flatMap(category=>routeSeed[category].map((r,index)=>({id:`${category}-${index}`,category,rank:index+1,name:r[0],meta:r[1],signups:r[2],assets:r[3],image:r[4]})))
 ];
-let activeCategory="nearby", activeNearbyCity="杭州", activeLibraryTab="ready", activeGenericTab="ready", currentRoute=null, selectionMode=false, selected=new Set(), previewItem=null, previewItems=[], previewIndex=0, previewTouchStart=0, readyBatchOffset=0, readyCaptionIndex=0, genericBatchOffset=0, genericCaptionIndex=0, toastTimer;
+let activeCategory="nearby", activeNearbyCity="all", activeLibraryTab="photos", activeGenericTab="photos", currentRoute=null, selectionMode=false, selected=new Set(), previewItem=null, previewItems=[], previewIndex=0, previewTouchStart=0, readyBatchOffset=0, readyCaptionIndex=0, genericBatchOffset=0, genericCaptionIndex=0, toastTimer;
 
 const $=selector=>document.querySelector(selector);
 const $$=selector=>[...document.querySelectorAll(selector)];
 const bg=url=>`style="background-image:url('${url}')"`;
+const hotMaterialsPreviewLimit = 9;
+let showAllHotMaterials = false;
+let selectionScope = "hot";
 
 $("#backToLeaderHome").addEventListener("click",()=>{window.location.href="../leader/my.html"});
 
 function renderGeneric(){
   const grid=$("#genericGrid");
-  const isReady=activeGenericTab==="ready";
-  grid.classList.toggle("ready-mode",isReady);
-  $("#selectToggle").hidden=isReady;
-  if(isReady){
-    const images=getHotReadyImages();
-    const post=readyPosts[genericCaptionIndex];
-    grid.innerHTML=`<section class="publish-kit hot-publish-kit"><div class="kit-head"><div><span class="kit-step">01</span><strong>发布配图</strong><small>已选 9 张</small></div><div class="kit-actions"><button data-hot-action="refresh-images">↻ 换一批</button><button class="kit-primary" data-hot-action="save-images">保存全部</button></div></div><div class="nine-grid">${images.map((item,index)=>`<button data-hot-ready-image="${index}" ${bg(item.image)} aria-label="预览第 ${index+1} 张配图"></button>`).join("")}</div><div class="kit-divider"></div><div class="kit-head copy-head"><div><span class="kit-step">02</span><strong>推荐文案</strong><small>文案和话题已搭配好</small></div><div class="kit-actions"><button data-hot-action="refresh-caption">↻ 换一条</button><button class="kit-primary" data-hot-action="copy-caption">复制文案</button></div></div><div class="post-copy"><p>${post.text}</p><div class="topic-list">${post.topics.map(topic=>`<span>${topic}</span>`).join("")}</div></div></section>`;
-    return;
-  }
+  $("#selectToggle").hidden=false;
   const type=activeGenericTab==="photos"?"图片":"视频";
-  const items=genericMaterials.filter(item=>item.type===type);
-  grid.innerHTML=items.map(item=>`<button class="material-card ${selected.has(item.id)?"selected":""}" data-generic="${item.id}" aria-label="预览${item.type}"><div class="material-thumb" ${bg(item.image)}><span class="material-type">${item.type}</span>${item.type==="视频"?'<span class="video-play">▶</span>':""}${selectionMode?'<span class="select-circle"></span>':""}</div></button>`).join("");
+  const items=getHotMaterialsByType(type);
+  const visibleItems = showAllHotMaterials ? items : items.slice(0, hotMaterialsPreviewLimit);
+  grid.innerHTML=visibleItems.map(item=>`<button class="asset-card hot-asset-card ${selected.has(item.id)?"selected":""}" data-generic="${item.id}" ${bg(item.image)} aria-label="预览${item.type}">${item.type==="视频"?'<span class="video-play">▶</span>':""}${selectionMode?'<span class="select-circle"></span>':""}</button>`).join("");
+  const toggle = $("#toggleHotMaterials");
+  toggle.hidden = items.length <= hotMaterialsPreviewLimit || (selectionMode && showAllHotMaterials);
+  toggle.textContent = showAllHotMaterials ? "收起" : `查看全部（${items.length}）`;
+  toggle.setAttribute("aria-expanded", String(showAllHotMaterials));
 }
 
-function routeMarkup(route,index=route.rank){return `<button class="route-card ${route.assets===0?"no-assets":""}" data-route="${route.id}"><span class="rank">${String(index).padStart(2,"0")}</span><span class="route-thumb" ${bg(route.image)}></span><span class="route-info"><h3>${route.name}</h3><p>${route.meta}</p><span class="route-stats"><span class="signup">上周 ${route.signups} 人报名</span><span class="asset-count">${route.assets} 份素材</span></span></span><span class="route-chevron">›</span></button>`}
-function renderCityFilters(){const filters=$("#cityFilters");filters.hidden=activeCategory!=="nearby";const select=$("#citySelect");if(!select.options.length)select.innerHTML=nearbyCities.map(city=>`<option value="${city}">${city}站</option>`).join("");select.value=activeNearbyCity}
-function renderRoutes(){renderCityFilters();const list=routes.filter(r=>r.category===activeCategory&&(activeCategory!=="nearby"||r.city===activeNearbyCity)).slice(0,10);$("#routeList").innerHTML=list.map(r=>routeMarkup(r)).join("")}
+function routeMarkup(route,index=route.rank){return `<button class="route-card ${route.assets===0?"no-assets":""}" data-route="${route.id}"><span class="rank">${String(index).padStart(2,"0")}</span><span class="route-thumb" ${bg(route.image)}><span class="thumb-asset-count">${route.assets}份素材</span></span><span class="route-info"><h3>${route.name}</h3><span class="route-stats"><span class="signup">上周 ${route.signups} 人报名</span></span></span><span class="route-chevron">›</span></button>`}
+function renderCityFilters() {
+  $("#cityFilters").hidden = activeCategory !== "nearby";
+  const select = $("#citySelect");
+  if (!select.options.length) {
+    const stations = nearbyCities.map(city => `<option value="${city}">${city}站</option>`);
+    select.innerHTML = ['<option value="all">全部</option>', ...stations].join("");
+  }
+  select.value = activeNearbyCity;
+}
 
-function setPage(id){$$('.page').forEach(p=>{p.hidden=p.id!==id;p.classList.toggle("page-active",p.id===id)});window.scrollTo({top:0,behavior:"instant"})}
+function renderRoutes() {
+  renderCityFilters();
+  const isNearby = activeCategory === "nearby";
+  const allStations = activeNearbyCity === "all";
+  const list = routes.filter(route => route.category === activeCategory
+    && (!isNearby || allStations || route.city === activeNearbyCity));
+  if (isNearby && allStations) list.sort((a, b) => b.signups - a.signups);
+  $("#routeList").innerHTML = list.slice(0, 10).map((route, index) => routeMarkup(route, index + 1)).join("");
+}
+
+function setPage(id){if(selectionMode)toggleSelectionMode(false);$$('.page').forEach(p=>{p.hidden=p.id!==id;p.classList.toggle("page-active",p.id===id)});window.scrollTo({top:0,behavior:"instant"})}
 function showToast(message){clearTimeout(toastTimer);const el=$("#toast");el.textContent=message;el.classList.add("show");toastTimer=setTimeout(()=>el.classList.remove("show"),2100)}
 function openOverlay(id){$("#scrim").hidden=false;$(id).hidden=false;document.body.style.overflow="hidden"}
 function closeOverlays(){$$(".bottom-sheet").forEach(x=>x.hidden=true);$("#previewSheet").classList.remove("generic-carousel");$("#scrim").hidden=true;document.body.style.overflow=""}
 
 function renderPreviewSlide(){
   previewItem=previewItems[previewIndex];
+  const hot = $("#previewSheet").classList.contains("hot-preview");
   $("#previewMedia").style.backgroundImage=`url('${previewItem.image}')`;
-  $("#previewLabel").textContent=previewItem.label||"原始素材";
-  $("#previewTitle").textContent=previewItem.title||"线路素材";
-  $("#previewMeta").innerHTML=previewItem.type==="视频"
-    ? '<div><dt>素材类型</dt><dd>视频</dd></div><div><dt>上传人</dt><dd>九七/李阳</dd></div><div><dt>拍摄日期</dt><dd>2026-10-11</dd></div>'
-    : '<div><dt>图片大小</dt><dd>4.2MB</dd></div><div><dt>上传人</dt><dd>九七/李阳</dd></div><div><dt>拍摄日期</dt><dd>2026-10-11</dd></div>';
-  $("#previewCounter").textContent=`${previewIndex+1} / ${previewItems.length}`;
+  $("#previewAuthor").textContent=hot ? "" : (previewItem.author || "易涟（领队）");
+  $("#previewShotAt").textContent=`拍摄于 ${previewItem.shotAt||"2026-10-02 12:04"}`;
+  $("#previewViews").textContent=`浏览 ${previewItem.views ?? (238+previewIndex*17)}`;
+  $("#previewDownloadCount").textContent = `下载 ${previewItem.downloads ?? 0}`;
+  $("#previewSize").textContent=previewItem.size||(previewItem.type==="视频"?"18.6MB":"4.2MB");
+  $("#previewCounter").textContent=`${previewIndex+1}/${previewItems.length}`;
 }
 
 function movePreview(step){
@@ -127,11 +159,12 @@ function movePreview(step){
   renderPreviewSlide();
 }
 
-function openPreview(item,items=null){
+function openPreview(item,items=null,{ hot = false } = {}){
   previewItems=items||[item];
   previewIndex=Math.max(0,previewItems.findIndex(entry=>entry.id===item.id));
   const carousel=previewItems.length>1;
   $("#previewSheet").classList.toggle("generic-carousel",carousel);
+  $("#previewSheet").classList.toggle("hot-preview", hot);
   $("#previewCounter").hidden=!carousel;
   $("#previewPrev").hidden=!carousel;
   $("#previewNext").hidden=!carousel;
@@ -139,10 +172,27 @@ function openPreview(item,items=null){
   openOverlay("#previewSheet");
 }
 
-function updateSelection(){const n=selected.size;$("#selectedCount").textContent=n;$("#saveSelected").disabled=!n;renderGeneric()}
-function toggleSelectionMode(on){selectionMode=on;selected.clear();$("#selectionBar").hidden=!on;$("#selectToggle").textContent=on?"取消选择":"批量选择";updateSelection()}
+function updateSelection() {
+  $("#selectedCount").textContent = selected.size;
+  $("#saveSelected").disabled = selected.size === 0;
+  if (selectionScope === "library") renderLibrary();
+  else renderGeneric();
+}
 
-function openLibrary(route){currentRoute=route;activeLibraryTab="ready";readyBatchOffset=0;readyCaptionIndex=0;$("#libraryCoverImage").style.backgroundImage=`url('${route.image}')`;$("#libraryBadge").textContent=`${categoryNames[route.category]} TOP ${route.rank}`;$("#libraryTitle").textContent=route.name;$("#libraryMeta").textContent=`上周 ${route.signups} 人报名 · ${route.assets} 份素材`;$("#readyCount").textContent=route.assets===0?"0":"1";$("#photoCount").textContent=route.assets===0?"0":"18";$("#videoCount").textContent=route.assets===0?"0":"10";$(".library-body").classList.toggle("empty-mode",route.assets===0);$$('.library-tab').forEach((t,i)=>t.classList.toggle("active",i===0));renderLibrary();setPage("libraryPage")}
+function toggleSelectionMode(on, scope = selectionScope) {
+  selectionMode = on;
+  selectionScope = scope;
+  selected.clear();
+  const bar = $("#selectionBar");
+  bar.hidden = !on;
+  bar.classList.toggle("library-selection-bar", on && scope === "library");
+  const toggle = $(scope === "library" ? "#librarySelectToggle" : "#selectToggle");
+  toggle.textContent = on ? "取消选择" : "批量选择";
+  toggle.setAttribute("aria-pressed", String(on));
+  updateSelection();
+}
+
+function openLibrary(route){currentRoute=route;activeLibraryTab="photos";readyBatchOffset=0;readyCaptionIndex=0;$("#libraryCoverImage").style.backgroundImage=`url('${route.image}')`;$("#libraryBadge").textContent=`${categoryNames[route.category]} TOP ${route.rank}`;$("#libraryTitle").textContent=route.name;$("#photoCount").textContent=getLibraryAssets("photos").length;$("#videoCount").textContent=getLibraryAssets("videos").length;$(".library-body").classList.toggle("empty-mode",route.assets===0);$$('.library-tab').forEach(t=>t.classList.toggle("active",t.dataset.libraryTab==="photos"));setPage("libraryPage");renderLibrary()}
 
 const captions=["风吹过山野，也把烦恼带走了。","这一路的风景，值得慢慢收藏。","不用滤镜，这里的秋天已经足够浪漫。","短暂逃离城市，去山里好好呼吸。"];
 const readyPosts=[
@@ -151,6 +201,9 @@ const readyPosts=[
   {text:"短暂离开城市，去看山、看云，也看看更松弛的自己。",topics:["#说走就走","#山野生活","#旅行推荐"]},
   {text:"好风景不必远求，周末出发，去收藏一路的秋色。",topics:["#周边游","#周末出逃计划","#发现宝藏旅行地"]}
 ];
+
+function getHotReadyPost(){return readyPosts[genericCaptionIndex]}
+function getHotMaterialsByType(type){return genericMaterials.filter(item=>item.type===type)}
 
 function getHotReadyImages(){
   const images=[IMG.autumn,IMG.mountain,IMG.camp,IMG.lake,IMG.snow,IMG.sea,IMG.road,IMG.forest,IMG.city,IMG.japan];
@@ -161,11 +214,12 @@ function getReadyImages(){
   const images=[currentRoute.image,IMG.mountain,IMG.lake,IMG.road,IMG.autumn,IMG.camp,IMG.snow,IMG.forest,IMG.sea,IMG.village];
   return Array.from({length:9},(_,index)=>({id:`ready-${currentRoute.id}-${readyBatchOffset}-${index}`,image:images[(index+readyBatchOffset)%images.length],type:"图片",title:`${currentRoute.name} · 配图 ${index+1}`,label:"直接发布配图"}));
 }
-function getLibraryAssets(){
-  const isVideo=activeLibraryTab==="videos";
+function getLibraryAssets(tab = activeLibraryTab){
+  if (!currentRoute?.assets) return [];
+  const isVideo=tab==="videos";
   const images=[currentRoute.image,IMG.mountain,IMG.lake,IMG.road,IMG.autumn,IMG.camp,IMG.snow,IMG.forest,IMG.sea,IMG.village];
   return images.map((image,index)=>({
-    id:`${currentRoute.id}-${activeLibraryTab}-${index}`,
+    id:`${currentRoute.id}-${tab}-${index}`,
     image,
     type:isVideo?"视频":"图片",
     duration:isVideo?`00:${12+index*3}`:null,
@@ -176,17 +230,23 @@ function getLibraryAssets(){
 
 function renderLibrary(){
   const c=$("#libraryContent");
+  $("#librarySelectionToolbar").hidden = currentRoute.assets === 0 || activeLibraryTab === "ready";
+  const selecting = selectionMode && selectionScope === "library";
+  c.classList.toggle("library-selecting", selecting);
   if(currentRoute.assets===0){
-    c.innerHTML=`<div class="library-empty"><div class="empty-landscape" aria-hidden="true"><span class="empty-sun"></span><span class="empty-mountain mountain-back"></span><span class="empty-mountain mountain-front"></span><span class="empty-road"></span></div><h2>抱歉，素材正在来的路上</h2><p>工作人员正在快马加鞭准备中</p></div>`;
+    c.innerHTML=`<div class="library-empty"><div class="empty-space" aria-hidden="true"><span class="empty-moon"></span><span class="empty-orbit"></span><span class="empty-note"></span></div><h2>抱歉，素材正在来的路上</h2></div>`;
     return;
   }
   if(activeLibraryTab==="ready"){
     const images=getReadyImages();
     const post=readyPosts[readyCaptionIndex];
-    c.innerHTML=`<section class="publish-kit"><div class="kit-head"><div><span class="kit-step">01</span><strong>发布配图</strong><small>已选 9 张</small></div><div class="kit-actions"><button data-ready-action="refresh-images">↻ 换一批</button><button class="kit-primary" data-ready-action="save-images">保存全部</button></div></div><div class="nine-grid">${images.map((item,index)=>`<button data-ready-image="${index}" ${bg(item.image)} aria-label="预览第 ${index+1} 张配图"></button>`).join("")}</div><div class="kit-divider"></div><div class="kit-head copy-head"><div><span class="kit-step">02</span><strong>推荐文案</strong><small>文案和话题已搭配好</small></div><div class="kit-actions"><button data-ready-action="refresh-caption">↻ 换一条</button><button class="kit-primary" data-ready-action="copy-caption">复制文案</button></div></div><div class="post-copy"><p>${post.text}</p><div class="topic-list">${post.topics.map(topic=>`<span>${topic}</span>`).join("")}</div></div></section>`;
+    c.innerHTML=`<section class="publish-kit"><div class="kit-head"><div><span class="kit-step">01</span><strong>发布配图</strong></div><div class="kit-actions"><button data-ready-action="refresh-images">↻ 换一批</button><button class="kit-primary" data-ready-action="save-images">保存全部</button></div></div><div class="nine-grid">${images.map((item,index)=>`<button data-ready-image="${index}" ${bg(item.image)} aria-label="预览第 ${index+1} 张配图"></button>`).join("")}</div><div class="kit-divider"></div><div class="kit-head copy-head"><div><span class="kit-step">02</span><strong>推荐文案</strong></div><div class="kit-actions"><button data-ready-action="refresh-caption">↻ 换一条</button><button class="kit-primary" data-ready-action="copy-caption">复制文案</button></div></div><div class="post-copy"><p>${post.text}</p><div class="topic-list">${post.topics.map(topic=>`<span>${topic}</span>`).join("")}</div></div></section>`;
   }else{
     const items=getLibraryAssets();
-    c.innerHTML=`<div class="asset-grid">${items.map((item,index)=>`<button class="asset-card" data-asset="${index}" ${bg(item.image)} aria-label="预览${item.type}"><span class="asset-duration">${item.type}</span>${item.type==="视频"?'<span class="video-play">▶</span>':""}</button>`).join("")}</div>`;
+    c.innerHTML=`<div class="asset-grid">${items.map((item,index)=>{
+      const checked = selecting && selected.has(item.id);
+      return `<button class="asset-card${checked ? " selected" : ""}" data-asset="${index}" ${bg(item.image)} aria-label="${selecting ? "选择" : "预览"}${item.type} ${index+1}"${selecting ? ` aria-pressed="${checked}"` : ""}>${item.type==="视频"?'<span class="video-play">▶</span>':""}${selecting ? '<span class="select-circle" aria-hidden="true"></span>' : ""}</button>`;
+    }).join("")}</div>`;
   }
 }
 
@@ -194,11 +254,38 @@ function openPackage(index){const image=[currentRoute.image,IMG.camp,IMG.road][i
 
 function search(value){const q=value.trim().toLowerCase();$("#searchIntro").hidden=!!q;if(!q){$("#searchResults").innerHTML="";return}const found=routes.filter(r=>(r.name+r.meta).toLowerCase().includes(q));$("#searchResults").innerHTML=found.length?found.map((r,i)=>routeMarkup(r,i+1)).join(""):`<div class="empty"><strong>没有找到相关线路</strong>试试输入完整的线路名或目的地</div>`}
 
-$("#genericGrid").addEventListener("click",async e=>{const hotAction=e.target.closest("[data-hot-action]");if(hotAction){const action=hotAction.dataset.hotAction;if(action==="refresh-images"){genericBatchOffset=(genericBatchOffset+1)%10;renderGeneric();showToast("已换一批热门配图")}if(action==="save-images")showToast("正在保存 9 张图片到相册…");if(action==="refresh-caption"){genericCaptionIndex=(genericCaptionIndex+1)%readyPosts.length;renderGeneric();showToast("已更换文案和话题")}if(action==="copy-caption"){const post=readyPosts[genericCaptionIndex];const text=`${post.text}\n${post.topics.join(" ")}`;try{await navigator.clipboard.writeText(text)}catch{}showToast("文案和话题已复制")}return}const readyImage=e.target.closest("[data-hot-ready-image]");if(readyImage){const items=getHotReadyImages();return openPreview(items[Number(readyImage.dataset.hotReadyImage)],items)}const card=e.target.closest("[data-generic]");if(!card)return;const item=genericMaterials.find(x=>x.id===card.dataset.generic);const visibleItems=genericMaterials.filter(entry=>entry.type===item.type);if(selectionMode){selected.has(item.id)?selected.delete(item.id):selected.add(item.id);updateSelection()}else openPreview(item,visibleItems)});
-$$('.generic-tab').forEach(tab=>tab.addEventListener("click",()=>{if(selectionMode)toggleSelectionMode(false);activeGenericTab=tab.dataset.genericTab;$$('.generic-tab').forEach(item=>item.classList.toggle("active",item===tab));renderGeneric()}));
-$("#selectToggle").addEventListener("click",()=>toggleSelectionMode(!selectionMode));
+$("#genericGrid").addEventListener("click",async e=>{const hotAction=e.target.closest("[data-hot-action]");if(hotAction){const action=hotAction.dataset.hotAction;if(action==="refresh-images"){genericBatchOffset=(genericBatchOffset+1)%10;renderGeneric();showToast("已换一批热门配图")}if(action==="save-images")showToast("正在保存 9 张图片到相册…");if(action==="refresh-caption"){genericCaptionIndex=(genericCaptionIndex+1)%readyPosts.length;renderGeneric();showToast("已更换文案和话题")}if(action==="copy-caption"){const post=getHotReadyPost();const text=`${post.text}\n${post.topics.join(" ")}`;try{await navigator.clipboard.writeText(text)}catch{}showToast("文案和话题已复制")}return}const readyImage=e.target.closest("[data-hot-ready-image]");if(readyImage){const items=getHotReadyImages();return openPreview(items[Number(readyImage.dataset.hotReadyImage)],items,{ hot: true })}const card=e.target.closest("[data-generic]");if(!card)return;const item=genericMaterials.find(x=>x.id===card.dataset.generic);const visibleItems=getHotMaterialsByType(item.type);if(selectionMode){selected.has(item.id)?selected.delete(item.id):selected.add(item.id);updateSelection()}else openPreview(item,visibleItems,{ hot: true })});
+$("#toggleHotMaterials").addEventListener("click", event => {
+  showAllHotMaterials = !showAllHotMaterials;
+  renderGeneric();
+  if (showAllHotMaterials && selectionMode) {
+    $("#genericGrid").querySelectorAll("[data-generic]")[hotMaterialsPreviewLimit]?.focus();
+  } else if (!showAllHotMaterials) {
+    event.currentTarget.scrollIntoView({ block: "nearest" });
+  }
+});
+$$('.generic-tab').forEach(tab=>tab.addEventListener("click",()=>{
+  if (activeGenericTab === tab.dataset.genericTab) return;
+  if (selectionMode) toggleSelectionMode(false);
+  activeGenericTab = tab.dataset.genericTab;
+  showAllHotMaterials = false;
+  $$('.generic-tab').forEach(item=>item.classList.toggle("active",item===tab));
+  renderGeneric();
+}));
+$("#selectToggle").addEventListener("click",()=>toggleSelectionMode(!selectionMode,"hot"));
+$("#librarySelectToggle").addEventListener("click", () => toggleSelectionMode(!selectionMode, "library"));
 $("#cancelSelection").addEventListener("click",()=>toggleSelectionMode(false));
-$("#saveSelected").addEventListener("click",()=>{const n=selected.size;showToast(`正在保存 ${n} 个素材到相册…`);setTimeout(()=>{toggleSelectionMode(false);showToast(`${n} 个素材已保存到相册`)},850)});
+$("#saveSelected").addEventListener("click", () => {
+  const count = selected.size;
+  if (!count) return;
+  const isLibrary = selectionScope === "library";
+  toggleSelectionMode(false);
+  if (isLibrary) showToast(`已选 ${count} 个素材（保存演示）`);
+  else {
+    showToast(`正在保存 ${count} 个素材到相册…`);
+    setTimeout(() => showToast(`${count} 个素材已保存到相册`), 850);
+  }
+});
 $("#saveSingle").addEventListener("click",()=>{closeOverlays();showToast(`${previewItem.type}已保存到相册`)});
 $("#previewPrev").addEventListener("click",()=>movePreview(-1));
 $("#previewNext").addEventListener("click",()=>movePreview(1));
@@ -208,15 +295,37 @@ document.addEventListener("keydown",e=>{if($("#previewSheet").hidden||previewIte
 
 $$('.route-tab').forEach(tab=>tab.addEventListener("click",()=>{activeCategory=tab.dataset.category;$$('.route-tab').forEach(t=>t.classList.toggle("active",t===tab));renderRoutes()}));
 $("#citySelect").addEventListener("change",e=>{activeNearbyCity=e.target.value;renderRoutes()});
-function routeClick(e){const card=e.target.closest("[data-route]");if(card)openLibrary(routes.find(r=>r.id===card.dataset.route))}
+function routeClick(event) {
+  const card = event.target.closest("[data-route]");
+  if (!card) return;
+  const route = routes.find(item => item.id === card.dataset.route);
+  if (!route) return;
+  const isOverallRanking = event.currentTarget.id === "routeList"
+    && activeCategory === "nearby" && activeNearbyCity === "all";
+  const rank = isOverallRanking ? Array.from(event.currentTarget.children).indexOf(card) + 1 : route.rank;
+  openLibrary({ ...route, rank });
+}
 $("#routeList").addEventListener("click",routeClick);$("#searchResults").addEventListener("click",routeClick);
 $("#openSearch").addEventListener("click",()=>{setPage("searchPage");setTimeout(()=>$("#searchInput").focus(),100)});
 $$('[data-back]').forEach(button=>button.addEventListener("click",()=>setPage("homePage")));
 $("#searchInput").addEventListener("input",e=>search(e.target.value));
 $$('[data-keyword]').forEach(btn=>btn.addEventListener("click",()=>{$("#searchInput").value=btn.dataset.keyword;search(btn.dataset.keyword)}));
 
-$$('.library-tab').forEach(tab=>tab.addEventListener("click",()=>{activeLibraryTab=tab.dataset.libraryTab;$$('.library-tab').forEach(t=>t.classList.toggle("active",t===tab));renderLibrary()}));
-$("#libraryContent").addEventListener("click",async e=>{const readyAction=e.target.closest("[data-ready-action]");if(readyAction){const action=readyAction.dataset.readyAction;if(action==="refresh-images"){readyBatchOffset=(readyBatchOffset+1)%10;renderLibrary();showToast("已换一批配图")}if(action==="save-images")showToast("正在保存 9 张图片到相册…");if(action==="refresh-caption"){readyCaptionIndex=(readyCaptionIndex+1)%readyPosts.length;renderLibrary();showToast("已更换文案和话题")}if(action==="copy-caption"){const post=readyPosts[readyCaptionIndex];const text=`${post.text}\n${post.topics.join(" ")}`;try{await navigator.clipboard.writeText(text)}catch{}showToast("文案和话题已复制")}return}const readyImage=e.target.closest("[data-ready-image]");if(readyImage){const items=getReadyImages();return openPreview(items[Number(readyImage.dataset.readyImage)],items)}const asset=e.target.closest("[data-asset]");if(asset){const items=getLibraryAssets();const item=items[Number(asset.dataset.asset)];openPreview(item,items)}});
+$$('.library-tab').forEach(tab=>tab.addEventListener("click",()=>{
+  if (activeLibraryTab === tab.dataset.libraryTab) return;
+  activeLibraryTab = tab.dataset.libraryTab;
+  $$('.library-tab').forEach(t=>t.classList.toggle("active",t===tab));
+  if (selectionMode && selectionScope === "library") toggleSelectionMode(false);
+  else renderLibrary();
+}));
+$("#libraryContent").addEventListener("click",async e=>{const readyAction=e.target.closest("[data-ready-action]");if(readyAction){const action=readyAction.dataset.readyAction;if(action==="refresh-images"){readyBatchOffset=(readyBatchOffset+1)%10;renderLibrary();showToast("已换一批配图")}if(action==="save-images")showToast("正在保存 9 张图片到相册…");if(action==="refresh-caption"){readyCaptionIndex=(readyCaptionIndex+1)%readyPosts.length;renderLibrary();showToast("已更换文案和话题")}if(action==="copy-caption"){const post=readyPosts[readyCaptionIndex];const text=`${post.text}\n${post.topics.join(" ")}`;try{await navigator.clipboard.writeText(text)}catch{}showToast("文案和话题已复制")}return}const readyImage=e.target.closest("[data-ready-image]");if(readyImage){const items=getReadyImages();return openPreview(items[Number(readyImage.dataset.readyImage)],items)}const asset=e.target.closest("[data-asset]");if(asset){const items=getLibraryAssets();const item=items[Number(asset.dataset.asset)];if (!item) return;
+  if (selectionMode && selectionScope === "library") {
+    if (selected.has(item.id)) selected.delete(item.id);
+    else selected.add(item.id);
+    updateSelection();
+    $("#libraryContent").querySelector(`[data-asset="${asset.dataset.asset}"]`)?.focus({ preventScroll: true });
+  } else openPreview(item,items);
+}});
 $("#captionInput").addEventListener("input",e=>$("#captionCount").textContent=e.target.value.length);
 $("#saveAndCopy").addEventListener("click",async()=>{const text=$("#captionInput").value;try{await navigator.clipboard.writeText(text)}catch{}$("#packageSheet").hidden=true;$("#platformSheet").hidden=false});
 $$('[data-platform]').forEach(btn=>btn.addEventListener("click",()=>{closeOverlays();showToast(`正在打开${btn.dataset.platform}…`)}));

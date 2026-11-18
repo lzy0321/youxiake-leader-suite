@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7fa" />
+    <meta name="description" content="游侠客领队素材运营后台" />
+    <title>素材运营后台 · 游侠客</title>
+    <link rel="stylesheet" href="./styles.css?v=3" />
+    <link rel="stylesheet" href="./compact-cards.css?v=1" />
+    <link rel="stylesheet" href="./upload.css?v=5" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">游</span><span><strong>游侠客</strong><small>素材运营后台</small></span></div>
+        <nav class="side-nav" aria-label="后台页面">
+          <button class="nav-item active" data-page="library"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h5A1.5 1.5 0 0 1 12 5.5v5a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 10.5v-5Zm8 8A1.5 1.5 0 0 1 13.5 12h5a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5h-5a1.5 1.5 0 0 1-1.5-1.5v-5ZM14 4h4a2 2 0 0 1 2 2v4M4 14v4a2 2 0 0 0 2 2h4"/></svg><span>线路素材库</span></button>
+          <button class="nav-item" data-page="hotspot"><svg viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg><span>素材上传</span></button>
+        </nav>
+        <div class="side-footer"><span class="status-dot"></span>素材服务运行正常</div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div><strong id="topbarTitle">线路素材库</strong></div>
+          <div class="operator"><span class="operator-avatar">林</span><span><strong>林小北</strong><small>内容运营</small></span><button aria-label="展开账户菜单">⌄</button></div>
+        </header>
+
+        <section id="libraryPage" class="page active">
+          <div class="page-heading">
+            <div><h1>莫干山秋日徒步 1 日</h1></div>
+            <button class="primary-action" id="uploadButton"><svg viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>上传素材</button>
+          </div>
+
+          <div class="panel material-panel">
+            <div class="panel-toolbar">
+              <div><h2>全部照片</h2><span id="resultCount">共 34 张</span></div>
+              <div class="toolbar-actions">
+                <label class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="librarySearch" type="search" placeholder="搜索上传人" /></label>
+                <label class="select-field">上传时间<select id="timeSort" aria-label="按上传时间排序"><option value="desc">从新到旧</option><option value="asc">从旧到新</option></select></label>
+                <button id="toggleRouteSelection" class="route-action" type="button" aria-pressed="false">多选</button>
+              </div>
+            </div>
+            <div id="routeSelectionBar" class="route-selection-bar" hidden>
+              <span id="routeSelectionCount" role="status">已选 0 张</span>
+              <button id="removeRouteSelected" class="route-action route-action-danger" type="button" disabled>批量移除</button>
+            </div>
+            <div id="routePhotoGrid" class="uploaded-grid"></div>
+          </div>
+        </section>
+
+        <section id="hotspotPage" class="page">
+          <div class="asset-management">
+            <section class="panel upload-panel">
+              <header class="upload-panel-head">
+                <div><h2>已上传图片</h2><span id="uploadedImageCount"></span></div>
+                <button class="compact-upload image-upload" id="uploadImages" type="button"><svg viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>上传图片</button>
+              </header>
+              <div id="uploadedImageGrid" class="uploaded-grid"></div>
+            </section>
+
+            <section class="panel upload-panel">
+              <header class="upload-panel-head">
+                <div><h2>已上传视频</h2><span id="uploadedVideoCount"></span></div>
+                <button class="compact-upload video-upload" id="uploadVideos" type="button"><svg viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>上传视频</button>
+              </header>
+              <div id="uploadedVideoGrid" class="uploaded-grid"></div>
+            </section>
+          </div>
+          <input id="imageFileInput" type="file" accept="image/*" multiple hidden />
+          <input id="videoFileInput" type="file" accept="video/*" multiple hidden />
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <dialog id="uploadedPhotoViewer" class="uploaded-photo-viewer" aria-label="素材预览">
+      <div class="viewer-stage" id="uploadedViewerStage">
+        <img id="uploadedFullPhoto" alt="" />
+        <video id="uploadedFullVideo" controls playsinline preload="metadata" hidden></video>
+      </div>
+      <button id="closeUploadedPhoto" class="viewer-close" type="button" aria-label="关闭预览">×</button>
+      <div class="viewer-actions">
+        <dl id="uploadedPhotoInfo" class="viewer-info" hidden></dl>
+        <div class="viewer-toolbar">
+          <button id="toggleUploadedPhotoInfo" type="button" aria-controls="uploadedPhotoInfo" aria-expanded="false">照片信息</button>
+          <button id="rotateUploadedPhoto" type="button">↻ 旋转</button>
+          <button id="deleteUploadedMedia" class="viewer-delete" type="button" hidden>删除</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="routeRemoveDialog" class="route-remove-dialog" aria-labelledby="routeRemoveTitle" aria-describedby="routeRemoveMessage">
+      <form method="dialog">
+        <h2 id="routeRemoveTitle">确认批量移除</h2>
+        <p id="routeRemoveMessage"></p>
+        <div class="route-remove-actions">
+          <button class="route-action" type="submit" value="cancel" autofocus>取消</button>
+          <button id="confirmRouteRemove" class="route-action route-action-danger" type="button">确认移除</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="./app.js?v=12"></script>
+  </body>
+</html>

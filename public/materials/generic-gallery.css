@@ -217,63 +217,71 @@
 
 .library-empty h2 {
   margin: 22px 0 8px;
-  color: #385447;
-  font-size: 18px;
+  color: #888e96;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.library-empty p {
-  margin: 0;
-  color: #a0a29c;
-  font-size: 12px;
-}
-
-.empty-landscape {
+.empty-space {
   position: relative;
-  width: 230px;
-  height: 150px;
-  border-radius: 115px 115px 28px 28px;
-  background: linear-gradient(180deg, #e7f0e9 0%, #f5f3e8 72%);
+  width: 184px;
+  height: 147px;
+  border-radius: 46% 54% 48% 52% / 58% 60% 40% 42%;
+  background: #e8f4ff;
   overflow: hidden;
 }
 
-.empty-sun {
+.empty-moon {
   position: absolute;
-  top: 25px;
-  right: 44px;
-  width: 28px;
-  height: 28px;
+  bottom: -47px;
+  right: -5px;
+  width: 145px;
+  height: 110px;
   border-radius: 50%;
-  background: #d8ed78;
+  background:
+    radial-gradient(circle at 32% 32%, #8bc3f3 0 11px, transparent 12px),
+    radial-gradient(circle at 74% 24%, #8bc3f3 0 7px, transparent 8px),
+    radial-gradient(circle at 56% 53%, #8bc3f3 0 18px, transparent 19px),
+    #b4ddff;
 }
 
-.empty-mountain {
+.empty-orbit {
   position: absolute;
-  bottom: -22px;
-  width: 150px;
-  height: 120px;
-  border-radius: 48% 52% 0 0;
-  transform: rotate(45deg);
+  top: 58px;
+  left: 32px;
+  width: 30px;
+  height: 10px;
+  border: 2px solid #a4d5fa;
+  border-radius: 50%;
+  background: #c8e8ff;
+  transform: rotate(27deg);
 }
 
-.mountain-back {
-  left: -35px;
-  background: #9cb9aa;
-}
-
-.mountain-front {
-  right: -40px;
-  bottom: -40px;
-  background: #547665;
-}
-
-.empty-road {
+.empty-note {
   position: absolute;
-  left: 95px;
-  bottom: -18px;
-  width: 42px;
-  height: 105px;
-  background: #f5e5bd;
-  clip-path: polygon(44% 0, 58% 0, 100% 100%, 0 100%);
+  top: 28px;
+  right: 38px;
+  width: 45px;
+  height: 61px;
+  border: 2px solid #acd9fa;
+  border-radius: 4px 4px 19px 19px;
+  background:
+    linear-gradient(#80c2f5, #80c2f5) center 7px / 27px 17px no-repeat,
+    linear-gradient(#f1faff, #f1faff) center 31px / 26px 2px no-repeat,
+    linear-gradient(#f1faff, #f1faff) center 39px / 18px 2px no-repeat,
+    #a6d7fb;
+  transform: rotate(12deg);
+}
+
+.empty-note::after {
+  content: "";
+  position: absolute;
+  right: -17px;
+  bottom: -2px;
+  width: 26px;
+  height: 25px;
+  border-radius: 0 0 17px 0;
+  background: #83c3f5;
 }
 
 .publish-kit {
