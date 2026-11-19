@@ -8,7 +8,7 @@
     <title>素材运营后台 · 游侠客</title>
     <link rel="stylesheet" href="./styles.css?v=3" />
     <link rel="stylesheet" href="./compact-cards.css?v=1" />
-    <link rel="stylesheet" href="./upload.css?v=5" />
+    <link rel="stylesheet" href="./upload.css?v=6" />
   </head>
   <body>
     <div class="admin-shell">
@@ -24,20 +24,21 @@
       <main class="workspace">
         <header class="topbar">
           <div><strong id="topbarTitle">线路素材库</strong></div>
-          <div class="operator"><span class="operator-avatar">林</span><span><strong>林小北</strong><small>内容运营</small></span><button aria-label="展开账户菜单">⌄</button></div>
+          <div class="operator" hidden><span class="operator-avatar">林</span><span><strong>林小北</strong><small>内容运营</small></span><button aria-label="展开账户菜单">⌄</button></div>
         </header>
 
         <section id="libraryPage" class="page active">
           <div class="page-heading">
             <div><h1>莫干山秋日徒步 1 日</h1></div>
-            <button class="primary-action" id="uploadButton"><svg viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>上传素材</button>
+            <button class="primary-action" id="routePhotoLibraryButton" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 16-5-5L6 21"/></svg>线路照片库</button>
           </div>
 
           <div class="panel material-panel">
             <div class="panel-toolbar">
-              <div><h2>全部照片</h2><span id="resultCount">共 34 张</span></div>
+              <div><h2 id="routePhotoLibraryHeading" tabindex="-1">全部照片</h2><span id="resultCount">共 34 张</span></div>
               <div class="toolbar-actions">
                 <label class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="librarySearch" type="search" placeholder="搜索上传人" /></label>
+                <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="libraryGroupSearch" type="search" placeholder="搜索团号" aria-label="搜索团号" /></label>
                 <label class="select-field">上传时间<select id="timeSort" aria-label="按上传时间排序"><option value="desc">从新到旧</option><option value="asc">从旧到新</option></select></label>
                 <button id="toggleRouteSelection" class="route-action" type="button" aria-pressed="false">多选</button>
               </div>
@@ -100,6 +101,6 @@
         </div>
       </form>
     </dialog>
-    <script src="./app.js?v=12"></script>
+    <script src="./app.js?v=14"></script>
   </body>
 </html>

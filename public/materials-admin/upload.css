@@ -314,3 +314,8 @@
   text-align: right;
   overflow-wrap: anywhere;
 }
+
+#libraryPage .panel-toolbar,
+#libraryPage .toolbar-actions {
+  flex-wrap: wrap;
+}

@@ -21,6 +21,8 @@ const photos=Array.from({length:48},(_,index)=>{
   const day=28-Math.floor(index/5), hour=17-(index%8), minute=String((index*7)%60).padStart(2,"0");
   return {id:`YXK-${String(2026103001+index)}`,image:imageUrls[index%imageUrls.length],route:index<34?routes[0]:routes[((index-34)%3)+1],uploader:names[index%names.length],uploadedAt:`2026-10-${String(day).padStart(2,"0")} ${String(hour).padStart(2,"0")}:${minute}`,shotAt:`2026-10-${String(Math.max(1,day-2)).padStart(2,"0")} ${String(Math.max(8,hour-2)).padStart(2,"0")}:${minute}`,size:`${(2.8+(index%7)*.47).toFixed(1)} MB`,dimensions:index%2?"4032 × 3024":"3024 × 4032",views:126+index*37};
 });
+// Demo group numbers are shared by batches of photos.
+photos.forEach((photo, index) => { photo.groupNo = `T${2026102801 - Math.floor(index / 5) * 100}`; });
 let uploadedImages = photos.slice(0, 10).map((photo, index) => ({
   ...photo,
   id: `image-${index}`,
@@ -44,13 +46,15 @@ let selectingRoutePhotos = false;
 const escapeHtml=value=>String(value).replace(/[&<>'"]/g,character=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[character]);
 
 function showToast(message){clearTimeout(toastTimer);const toast=$("#toast");toast.textContent=message;toast.classList.add("show");toastTimer=setTimeout(()=>toast.classList.remove("show"),2200)}
-function switchPage(page){currentPage=page;$$('.nav-item').forEach(button=>button.classList.toggle('active',button.dataset.page===page));$$('.page').forEach(section=>section.classList.toggle('active',section.id===`${page}Page`));$("#topbarTitle").textContent=page==="library"?"线路素材库":"素材上传";window.scrollTo({top:0,behavior:"instant"})}
+function switchPage(page){currentPage=page;$$('.nav-item').forEach(button=>button.classList.toggle('active',button.dataset.page===page));$$('.page').forEach(section=>section.classList.toggle('active',section.id===`${page}Page`));$("#topbarTitle").textContent=page==="library"?"线路素材库":"素材上传";$(".operator").hidden=page==="library";window.scrollTo({top:0,behavior:"instant"})}
 function getLibraryPhotos() {
   const query = $("#librarySearch").value.trim().toLowerCase();
+  const groupQuery = $("#libraryGroupSearch").value.trim().toLowerCase();
   const direction = sortDirection === "desc" ? -1 : 1;
   return photos.filter(photo => photo.route === routes[0]
     && !removedRoutePhotoIds.has(photo.id)
-    && photo.uploader.toLowerCase().includes(query))
+    && photo.uploader.toLowerCase().includes(query)
+    && (photo.groupNo ?? "").toLowerCase().includes(groupQuery))
     .sort((a, b) => direction * a.uploadedAt.localeCompare(b.uploadedAt));
 }
 
@@ -77,7 +81,7 @@ function renderLibrary() {
   $("#routePhotoGrid").innerHTML = list.length
     ? list.map(photo => uploadedMediaTile(photo, "image",
       selectingRoutePhotos ? selectedRoutePhotoIds.has(photo.id) : null)).join("")
-    : '<div class="upload-empty">没有找到对应上传人的照片</div>';
+    : '<div class="upload-empty">没有找到符合条件的照片</div>';
 }
 
 function uploadedMediaTile(asset, type, selected = null) {
@@ -201,7 +205,7 @@ function deletePreviewedMedia() {
 }
 
 $$('.nav-item').forEach(button=>button.addEventListener('click',()=>switchPage(button.dataset.page)));
-$("#librarySearch").addEventListener("input", () => {
+for (const field of ["#librarySearch", "#libraryGroupSearch"]) $(field).addEventListener("input", () => {
   selectedRoutePhotoIds.clear();
   updateRouteSelection();
   renderLibrary();
@@ -243,7 +247,7 @@ $("#routePhotoGrid").addEventListener("click", event => {
   const photo = photos.find(item => item.id === id);
   if (photo) openUploadedMedia(photo, "image");
 });
-$("#uploadButton").addEventListener("click",()=>showToast("Demo：上传入口已准备好"));
+$("#routePhotoLibraryButton").addEventListener("click",()=>$("#routePhotoLibraryHeading").focus());
 $("#uploadImages").addEventListener("click",()=>$("#imageFileInput").click());
 $("#uploadVideos").addEventListener("click",()=>$("#videoFileInput").click());
 $("#imageFileInput").addEventListener("change",event=>{if(event.target.files.length)addUploadedFiles(event.target.files,"image");event.target.value=""});
